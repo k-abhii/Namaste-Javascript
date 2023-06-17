@@ -18,6 +18,7 @@ let name ={
  Function.prototype u can use for this
  How can you give printName inside your implementation ?
  when we call printMyName2 method printName should be called how u will do ? this variable  keyword --represent printName 
+inside mybind function this variable denotes printName function
 
  */
 Function.prototype.mybind = function(...args){
