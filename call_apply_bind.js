@@ -6,3 +6,9 @@ let name = {
     }
 }
 name.printFullName();
+
+let name2 ={
+    firstname: "Sachin",
+    lastname: "Tendulkar"
+}
+name.printFullName.call(name2);
