@@ -19,3 +19,8 @@ let name2 ={
 
 printFullName.call(name2,"Mumbai","Maharastra");
 
+// bind --It is a method ,that can be called later, similar to call we pass argument 
+
+let printMyName = printFullName.bind(name,"Forbesganj","Bihar");
+console.log(printMyName);
+printMyName();
