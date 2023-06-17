@@ -4,15 +4,15 @@ let name = {
     
 }
 
-let printFullName =  function(){
-    console.log(this.firstname+ " "+this.lastname);
+let printFullName =  function(hometown){
+    console.log(this.firstname+ " "+this.lastname+" From "+ hometown);
 }
-printFullName.call(name);
+printFullName.call(name,"Forbesganj");
 
 let name2 ={
     firstname: "Sachin",
     lastname: "Tendulkar"
 }
 // function borrowing --call ()
-printFullName.call(name2);
+printFullName.call(name2,"Mumbai");
 
