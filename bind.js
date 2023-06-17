@@ -5,11 +5,11 @@ let name ={
     lastname:"Kumar"
 }
 
- let printName = function(){
-    console.log(this.firstname+" "+this.lastname);
+ let printName = function(hometown,state,country){
+    console.log(this.firstname+" "+this.lastname+" ,"+hometown+" ,"+state+", "+country);
  }
- let printMyName = printName.bind(name)
- printMyName();
+ let printMyName = printName.bind(name,"Forbesganj")
+ printMyName("Bihar","India");
 
  /*
  This functionality we have to write bind -> Implementation 
@@ -18,14 +18,15 @@ let name ={
  Function.prototype u can use for this
  How can you give printName inside your implementation ?
  when we call printMyName2 method printName should be called how u will do ? this variable  keyword --represent printName 
- 
+
  */
 Function.prototype.mybind = function(...args){
     let obj = this
-    return function(){
-        obj.call(args[0]);
+    params = args.slice(1);
+    return function(...args2){
+        obj.apply(args[0],[...params, ...args2]);
     }
 }
 
-let printMyName2 = printName.mybind(name);
-printMyName2();
+let printMyName2 = printName.mybind(name,"Forbesganj");
+printMyName2("Bihar","India");
