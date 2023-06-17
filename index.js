@@ -5,7 +5,7 @@ const getData=()=>{
     console.log("Fetching Data ...",counter++);
 }
 
-const doSomeMagic = function(fn,d){
+const debounce = function(fn,d){
     let timer;
     return function(){
         let context = this;
@@ -17,5 +17,5 @@ const doSomeMagic = function(fn,d){
         }, d);
     }
 }
-let betterFunction = doSomeMagic(getData,300); // Once we paused in typing then only API call should me made 
+let betterFunction = debounce(getData,300); // Once we paused in typing then only API call should me made 
 /* Above function make API calls only if between  two keypresses time is more than 300 ms */
