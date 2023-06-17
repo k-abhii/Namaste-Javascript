@@ -1,14 +1,18 @@
 let name = {
     firstname:"Abhimanyu",
     lastname :"Kumar",
-    printFullName: function(){
-        console.log(this.firstname+ " "+this.lastname);
-    }
+    
 }
-name.printFullName();
+
+let printFullName =  function(){
+    console.log(this.firstname+ " "+this.lastname);
+}
+printFullName.call(name);
 
 let name2 ={
     firstname: "Sachin",
     lastname: "Tendulkar"
 }
-name.printFullName.call(name2);
+// function borrowing --call ()
+printFullName.call(name2);
+
