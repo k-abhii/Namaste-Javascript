@@ -5,6 +5,13 @@
 - Limitations of Event Delegation?
 */
 
+// document.querySelector("#category").addEventListener('click',(e)=>{
+//     console.log("Parent Category Clicked!");
+// })
 document.querySelector("#category").addEventListener('click',(e)=>{
     console.log("Parent Category Clicked!");
+    console.log(e);
+    console.log(e.target);
+    console.log(e.target.id);
+    window.location.href ="/"+e.target.id;
 })
