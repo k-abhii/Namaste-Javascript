@@ -21,3 +21,19 @@ document.querySelector("#parent").addEventListener('click',() => {
 document.querySelector("#child").addEventListener('click',() => {
     console.log("Child Clicked");
 },false);
+
+===============================================CAPTURING========TRICKLING============
+
+    
+document.querySelector("#child").addEventListener('click',() => {
+    console.log("Child Clicked");
+},true);
+
+document.querySelector("#grandparent").addEventListener('click',() => {
+    console.log("Grand Parent Clicked!");
+},true);
+
+document.querySelector("#parent").addEventListener('click',() => {
+    console.log("Parent Clicked!");
+},true);
+
